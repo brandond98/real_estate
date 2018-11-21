@@ -1,0 +1,41 @@
+{% load static %}
+
+<header>
+  <div class="container">
+    <img src="{% static 'img/logo.svg'%}" alt="" class="logo">
+    <nav class="navigation">
+    <ul>
+      <li>
+        <a href="{% url 'index' %}"
+        {% if '/' == request.path %}
+          class = "active"
+        {% else %}
+          class= ""
+        {% endif %}
+        >Home
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'about' %}"
+        {% if '/about' == request.path %}
+          class = "active"
+        {% else %}
+          class= ""
+        {% endif %}
+        >About Us
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'listings' %}"
+        {% if '/listings/' == request.path %}
+          class = "active"
+        {% else %}
+          class= ""
+        {% endif %}
+        >Listings
+        </a>
+      </li>
+    </ul>
+    </nav>
+  </div>
+</header>

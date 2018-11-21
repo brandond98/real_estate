@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="property-search">
+  <h2>Find Your Dream Home</h2>
+  <h4>Thousands of beautiful properties for you</h4>
+  <form>
+    <div class="grid-container">
+      <div class="property-search-bar grid-x grid-padding-x">
+        <div class="medium-2 cell">
+
+          <select>
+            <option value="Location" data-content=>Location</option>
+            <option value="Lithuania">Lithuania</option>
+            <option value="hotdog">Hot Dog</option>
+            <option value="apollo">Apollo</option>
+          </select>
+        </div>
+        <div class="medium-2 cell">
+          <select>
+            <option value="husker">Property Type</option>
+            <option value="starbuck">Starbuck</option>
+            <option value="hotdog">Hot Dog</option>
+            <option value="apollo">Apollo</option>
+          </select>
+        </div>
+        <div class="medium-2 cell">
+          <select>
+            <option value="husker">Property Status</option>
+            <option value="starbuck">Starbuck</option>
+            <option value="hotdog">Hot Dog</option>
+            <option value="apollo">Apollo</option>
+          </select>
+        </div>
+        <div class="medium-2 cell">
+          <select>
+            <option value="husker">Any Bedrooms</option>
+            <option value="starbuck">Starbuck</option>
+            <option value="hotdog">Hot Dog</option>
+            <option value="apollo">Apollo</option>
+          </select>
+        </div>
+        <div class="medium-2 cell">
+          <select>
+            <option value="husker"><i class="fas fa-map-marker-alt"></i>Any Bathrooms</option>
+            <option value="starbuck">Starbuck</option>
+            <option value="hotdog">Hot Dog</option>
+            <option value="apollo">Apollo</option>
+          </select>
+        </div>
+        <div class="medium-2 cell">
+          <button type="button" class="button">Search</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="recent-container">
+  <div class="grid-container">
+    <div class="recent-listings">
+      <div class="grid-x grid-margin-x">
+        <div class="cell small-4">
+          <div class="listing-card">
+            <div class="listing-card-head">
+              <img src="{% static 'img/house.jpg' %}" alt="">
+            </div>
+            <div class="listing-card-bottom">
+              <h2>Real House Luxury Villa</h2>
+              <p><i class="fas fa-map-marker-alt"></i>Est St, 77 - Central Park South, NYC</p>
+              <ul>
+                <li><i class="fas fa-bed"></i>5 Bedrooms</li>
+                <li><i class="fas fa-bath"></i>3 Bathrooms</li>
+                <li><i class="fas fa-th-large"></i>720 sq ft</li>
+                <li><i class="fas fa-car"></i>1 Garage</li>
+              </ul>
+              <h3>$ 230,000</h3>
+              <hr>
+              <h4><i class="fas fa-user"></i>Brandon Dickson</h4>
+              <span class="sale">For Sale</span>
+            </div>
+          </div>
+        </div>
+        <div class="cell small-4">
+          <div class="listing-card">
+            <div class="listing-card-head">
+              <img src="{% static 'img/house.jpg' %}" alt="">
+            </div>
+            <div class="listing-card-bottom">
+              <h2>Real House Luxury Villa</h2>
+              <p><i class="fas fa-map-marker-alt"></i>Est St, 77 - Central Park South, NYC</p>
+              <ul>
+                <li><i class="fas fa-bed"></i>5 Bedrooms</li>
+                <li><i class="fas fa-bath"></i>3 Bathrooms</li>
+                <li><i class="fas fa-th-large"></i>720 sq ft</li>
+                <li><i class="fas fa-car"></i>1 Garage</li>
+              </ul>
+              <h3>$ 230,000</h3>
+              <hr>
+              <h4><i class="fas fa-user"></i>Brandon Dickson</h4>
+              <span class="rent">To Rent</span>
+            </div>
+          </div>
+        </div>
+        <div class="cell small-4">
+          <div class="listing-card">
+            <div class="listing-card-head">
+              <img src="{% static 'img/house.jpg' %}" alt="">
+            </div>
+            <div class="listing-card-bottom">
+              <h2>Real House Luxury Villa</h2>
+              <p><i class="fas fa-map-marker-alt"></i>Est St, 77 - Central Park South, NYC</p>
+              <ul>
+                <li><i class="fas fa-bed"></i>5 Bedrooms</li>
+                <li><i class="fas fa-bath"></i>3 Bathrooms</li>
+                <li><i class="fas fa-th-large"></i>720 sq ft</li>
+                <li><i class="fas fa-car"></i>1 Garage</li>
+              </ul>
+              <h3>$ 230,000</h3>
+              <hr>
+              <h4><i class="fas fa-user"></i>Brandon Dickson</h4>
+              <span class="sale">For Sale</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
