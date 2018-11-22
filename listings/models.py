@@ -58,6 +58,8 @@ class Listing(models.Model):
 
     bedrooms = models.IntegerField()
 
+    garages = models.IntegerField()
+
     lot_size = models.DecimalField(
 
         max_digits=5,
