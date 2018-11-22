@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-from realtors.models import Realtor 
+from realtors.models import Realtor
 
 # Create your models here.
 
@@ -26,12 +26,12 @@ class Listing(models.Model):
         max_length=100
     )
 
-    state = models.CharField(
+    county = models.CharField(
 
         max_length=100
     )
 
-    zipcode = models.CharField(
+    postcode = models.CharField(
 
         max_length=100
     )
