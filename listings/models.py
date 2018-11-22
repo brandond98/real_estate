@@ -58,7 +58,10 @@ class Listing(models.Model):
 
     bedrooms = models.IntegerField()
 
-    garages = models.IntegerField()
+    garages = models.IntegerField(
+
+        blank=False
+    )
 
     lot_size = models.DecimalField(
 
