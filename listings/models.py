@@ -60,7 +60,8 @@ class Listing(models.Model):
 
     garages = models.DecimalField(
 
-        blank=False
+        max_digits=5,
+        decimal_places=1
     )
 
     lot_size = models.DecimalField(
