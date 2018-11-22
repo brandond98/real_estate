@@ -51,19 +51,13 @@ class Listing(models.Model):
         decimal_places=1
     )
 
-    bedrooms = models.IntegerField(
+    garage = models.IntegerField(
 
         default=0
     )
 
-    bedrooms = models.IntegerField()
+    sqft = models.IntegerField()
 
-    garages = models.DecimalField(
-
-        max_digits=5,
-        decimal_places=1,
-        default = 0
-    )
 
     lot_size = models.DecimalField(
 
