@@ -13,7 +13,6 @@ class Realtor(models.Model):
     photo = models.ImageField(
 
         upload_to='photos/%Y/%m/%d/'
-
     )
 
     description = models.TextField(

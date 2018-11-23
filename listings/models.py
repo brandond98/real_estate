@@ -56,7 +56,10 @@ class Listing(models.Model):
         default=0
     )
 
-    sqft = models.IntegerField()
+    sqft = models.IntegerField(
+
+        default=0
+    )
 
 
     lot_size = models.DecimalField(

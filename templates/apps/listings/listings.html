@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load humanize %}
+
 {% block content %}
 
 <div class="text-divider">
@@ -14,142 +16,43 @@
   <div class="grid-container">
     <nav aria-label="You are here:" role="navigation">
       <ul class="breadcrumbs">
-        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'index' %}">{{Home}}</a></li>
         <li>
           <span class="show-for-sr">Current: </span> Listings
         </li>
       </ul>
     </nav>
     <div class="grid-x grid-margin-x">
+      {% if listings %}
+      {% for listing in listings %}
       <div class="cell small-4">
         <div class="listing-card margin-bottom">
           <div class="listing-card-head">
-            <img src="{% static 'img/house.jpg' %}" alt="">
+            <img src="{{ listing.photo_main.url }}" alt="">
           </div>
           <div class="listing-card-bottom">
-            <h2>Real House Luxury Villa</h2>
+            <h2>{{ listing.title }}</h2>
             <p><i class="fas fa-map-marker-alt"></i>Est St, 77 - Central Park South, NYC</p>
             <ul>
-              <li><i class="fas fa-bed"></i>5 Bedrooms</li>
-              <li><i class="fas fa-bath"></i>3 Bathrooms</li>
-              <li><i class="fas fa-th-large"></i>720 sq ft</li>
-              <li><i class="fas fa-car"></i>1 Garage</li>
+              <li><i class="fas fa-bed"></i>{{ listing.bedrooms }} Bedrooms</li>
+              <li><i class="fas fa-bath"></i>{{ listing.bathrooms }} Bathrooms</li>
+              <li><i class="fas fa-th-large"></i>{{ listing.sqft }} Sqft</li>
+              <li><i class="fas fa-car"></i> {{ listing.garage }} Garage</li>
             </ul>
-            <h3>$ 230,000</h3>
+            <h3>£ {{ listing.price | intcomma }}</h3>
             <hr>
-            <h4><i class="fas fa-user"></i>Brandon Dickson</h4>
+              <h4><i class="fas fa-user"></i>{{ listing.realtor }}</h4>
+              <h4 class="float-right"> {{ listing.list_date | timesince }}</h4>
             <span class="sale">For Sale</span>
           </div>
         </div>
       </div>
-      <div class="cell small-4">
-        <div class="listing-card margin-bottom">
-          <div class="listing-card-head">
-            <img src="{% static 'img/house.jpg' %}" alt="">
-          </div>
-          <div class="listing-card-bottom">
-            <h2>Real House Luxury Villa</h2>
-            <p><i class="fas fa-map-marker-alt"></i>Est St, 77 - Central Park South, NYC</p>
-            <ul>
-              <li><i class="fas fa-bed"></i>5 Bedrooms</li>
-              <li><i class="fas fa-bath"></i>3 Bathrooms</li>
-              <li><i class="fas fa-th-large"></i>720 sq ft</li>
-              <li><i class="fas fa-car"></i>1 Garage</li>
-            </ul>
-            <h3>$ 230,000</h3>
-            <hr>
-            <h4><i class="fas fa-user"></i>Brandon Dickson</h4>
-            <span class="sale">For Sale</span>
-          </div>
-        </div>
-      </div>
-      <div class="cell small-4">
-        <div class="listing-card margin-bottom">
-          <div class="listing-card-head">
-            <img src="{% static 'img/house.jpg' %}" alt="">
-          </div>
-          <div class="listing-card-bottom">
-            <h2>Real House Luxury Villa</h2>
-            <p><i class="fas fa-map-marker-alt"></i>Est St, 77 - Central Park South, NYC</p>
-            <ul>
-              <li><i class="fas fa-bed"></i>5 Bedrooms</li>
-              <li><i class="fas fa-bath"></i>3 Bathrooms</li>
-              <li><i class="fas fa-th-large"></i>720 sq ft</li>
-              <li><i class="fas fa-car"></i>1 Garage</li>
-            </ul>
-            <h3>$ 230,000</h3>
-            <hr>
-            <h4><i class="fas fa-user"></i>Brandon Dickson</h4>
-            <span class="sale">For Sale</span>
-          </div>
-        </div>
-      </div>
-      <div class="cell small-4">
-        <div class="listing-card">
-          <div class="listing-card-head">
-            <img src="{% static 'img/house.jpg' %}" alt="">
-          </div>
-          <div class="listing-card-bottom">
-            <h2>Real House Luxury Villa</h2>
-            <p><i class="fas fa-map-marker-alt"></i>Est St, 77 - Central Park South, NYC</p>
-            <ul>
-              <li><i class="fas fa-bed"></i>5 Bedrooms</li>
-              <li><i class="fas fa-bath"></i>3 Bathrooms</li>
-              <li><i class="fas fa-th-large"></i>720 sq ft</li>
-              <li><i class="fas fa-car"></i>1 Garage</li>
-            </ul>
-            <h3>$ 230,000</h3>
-            <hr>
-            <h4><i class="fas fa-user"></i>Brandon Dickson</h4>
-            <span class="sale">For Sale</span>
-          </div>
-        </div>
-      </div>
-      <div class="cell small-4">
-        <div class="listing-card">
-          <div class="listing-card-head">
-            <img src="{% static 'img/house.jpg' %}" alt="">
-          </div>
-          <div class="listing-card-bottom">
-            <h2>Real House Luxury Villa</h2>
-            <p><i class="fas fa-map-marker-alt"></i>Est St, 77 - Central Park South, NYC</p>
-            <ul>
-              <li><i class="fas fa-bed"></i>5 Bedrooms</li>
-              <li><i class="fas fa-bath"></i>3 Bathrooms</li>
-              <li><i class="fas fa-th-large"></i>720 sq ft</li>
-              <li><i class="fas fa-car"></i>1 Garage</li>
-            </ul>
-            <h3>$ 230,000</h3>
-            <hr>
-            <h4><i class="fas fa-user"></i>Brandon Dickson</h4>
-            <span class="sale">For Sale</span>
-          </div>
-        </div>
-      </div>
-      <div class="cell small-4">
-        <div class="listing-card">
-          <div class="listing-card-head">
-            <img src="{% static 'img/house.jpg' %}" alt="">
-          </div>
-          <div class="listing-card-bottom">
-            <h2>Real House Luxury Villa</h2>
-            <p><i class="fas fa-map-marker-alt"></i>Est St, 77 - Central Park South, NYC</p>
-            <ul>
-              <li><i class="fas fa-bed"></i>5 Bedrooms</li>
-              <li><i class="fas fa-bath"></i>3 Bathrooms</li>
-              <li><i class="fas fa-th-large"></i>720 sq ft</li>
-              <li><i class="fas fa-car"></i>1 Garage</li>
-            </ul>
-            <h3>$ 230,000</h3>
-            <hr>
-            <h4><i class="fas fa-user"></i>Brandon Dickson</h4>
-            <span class="sale">For Sale</span>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
+      {% else %}
+      <h3>No Listings Available</h3>
+      {% endif %}
     </div>
   </div>
-</div>
 
 
-{% endblock %}
+  {% endblock %}
