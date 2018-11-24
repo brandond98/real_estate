@@ -11,7 +11,7 @@
 <div class="content-section">
   <div class= "about-section">
   <div class="grid-container">
-    <nav aria-label="You are here:" role="navigation">
+    <nav class="breadcrumb-container "aria-label="You are here:" role="navigation">
       <ul class="breadcrumbs">
         <li><a href="{% url 'index' %}">Home</a></li>
         <li>
@@ -28,14 +28,21 @@
           massa, blandit eu egestas at, ultricies in tellus. Nunc bibendum tellus in ornare cursus. Fusce quis tincidunt arcu. Proin vitae dolor ut leo feugiat luctus at ut metus. Sed molestie augue magna, sit amet lacinia lorem vehicula eu.</p>
       </div>
       <div class="cell small-4">
-        <div class="seller-of-the-month">
-          <img src="{% static 'img/picture.jpeg' %}" alt="">
-          <div class="seller-info">
-            <h5>Seller Of The Month</h5>
-            <h6>Reece Brown</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius, libero id pulvinar egestas, quam turpis iaculis odio, eu blandit orci enim vel dui.</p>
+        {% if mvp_realtors %}
+          {% for realtor in mvp_realtors %}
+          <div class="seller-of-the-month">
+            <img src="{{ realtor.photo.url }}" alt="">
+            <div class="seller-info">
+              <h5>Seller Of The Month</h5>
+              <h6>{{ realtor.name }}</h6>
+              <p>{{ realtor.description }}</p>
+            </div>
           </div>
-        </div>
+          {% endfor %}
+        {% else %}
+        <h3>No Employee Of The Month</h3>
+        {% endif %}
+
       </div>
 </div>
     </div>

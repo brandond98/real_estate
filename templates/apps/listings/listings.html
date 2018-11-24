@@ -11,24 +11,27 @@
   <p>Curabitur varius, libero id pulvinar egestas, quam turpis iaculis odio, eu blandit orci enim vel dui!</p>
 </div>
 
-
 <div class="content-section">
   <div class="grid-container">
-    <nav aria-label="You are here:" role="navigation">
+    <nav class="breadcrumb-container "aria-label="You are here:" role="navigation">
       <ul class="breadcrumbs">
-        <li><a href="{% url 'index' %}">{{Home}}</a></li>
+        <li><a href="{% url 'index' %}">Home</a></li>
         <li>
           <span class="show-for-sr">Current: </span> Listings
         </li>
       </ul>
     </nav>
-    <div class="grid-x grid-margin-x">
+    <div class="grid-x grid-margin-x" data-equalizer data-equalize-on="medium">
       {% if listings %}
       {% for listing in listings %}
       <div class="cell small-4">
         <div class="listing-card margin-bottom">
           <div class="listing-card-head">
-            <img src="{{ listing.photo_main.url }}" alt="">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="{{ listing.photo_main.url }}" alt="" data-equalizer-watch>
+            <div class="content-details fadeIn-right">
+              <a href="{% url 'listing' listing.id %}">View More</a>
+            </div>
           </div>
           <div class="listing-card-bottom">
             <h2>{{ listing.title }}</h2>
@@ -41,8 +44,8 @@
             </ul>
             <h3>£ {{ listing.price | intcomma }}</h3>
             <hr>
-              <h4><i class="fas fa-user"></i>{{ listing.realtor }}</h4>
-              <h4 class="float-right"> {{ listing.list_date | timesince }}</h4>
+            <h4 class="float-left"><i class="fas fa-user"></i>{{ listing.realtor }}</h4>
+            <h4 class="float-right"> <i class="far fa-clock"></i>{{ listing.list_date | timesince }}</h4>
             <span class="sale">For Sale</span>
           </div>
         </div>
@@ -52,6 +55,29 @@
       <h3>No Listings Available</h3>
       {% endif %}
     </div>
+    <nav aria-label="Pagination">
+      {% if listings.has_other_pages  %}
+        <ul class="pagination">
+          {% if listings.has_previous %}
+              <li class="pagination-previous"><a href="?page={{ listings.previous_page_number }}">Previous <span class="show-for-sr">page</span></a></li>
+          {% else %}
+            <li class="pagination-previous disabled">Previous</li>
+          {% endif %}
+          {% for i in listings.paginator.page_range %}
+              {% if listings.number == i %}
+                <li class="current"><span class="show-for-sr">You're on page</span> {{i}}</li>
+              {% else %}
+                 <li><a href="?page={{ i }}" aria-label="Page {{i}}">{{ i }}</a></li>
+              {% endif %}
+          {% endfor %}
+          {% if listings.has_next %}
+            <li class="pagination-next"><a href="?page={{ listings.next_page_number }}" aria-label="Next page">Next</a></li>
+            {% else %}
+            <li class="pagination-next disabled">Next</li>
+        {% endif %}
+      </ul>
+      {% endif %}
+ </nav>
   </div>
 
 
