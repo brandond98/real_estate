@@ -88,7 +88,11 @@
                   <hr>
                   <h4 class="float-left"><i class="fas fa-user"></i>{{ listing.realtor }}</h4>
                   <h4 class="float-right"> <i class="far fa-clock"></i>{{ listing.list_date | timesince }}</h4>
-                  <span class="sale">For Sale</span>
+                  {% if listing.for_sale_or_rent == 'For Sale' %}
+                    <span class="sale">For Sale</span>
+                  {% else %}
+                    <span class="rent">To Rent</span>
+                  {% endif %}
                 </div>
               </div>
             </div>

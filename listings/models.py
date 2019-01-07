@@ -1,10 +1,23 @@
 from django.db import models
 from datetime import datetime
 from realtors.models import Realtor
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 
 class Listing(models.Model):
+    CHOICES = (
+        ('For Sale', 'For Sale'),
+        ('To Rent', 'To Rent')
+    )
+
+    for_sale_or_rent = models.CharField(
+
+        max_length = 100,
+        choices  = CHOICES,
+        default = 'For Sale'
+
+    )
     realtor = models.ForeignKey(
 
         Realtor,
