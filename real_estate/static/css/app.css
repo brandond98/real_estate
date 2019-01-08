@@ -139,6 +139,8 @@ footer{
   background: #0098ef;
   float: left;
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .property-search {
