@@ -7,9 +7,97 @@
 {% block content %}
 
 <div class="page-header">
-  <h2>House Address</h2>
+  <h2>{{ listing.title }}</h2>
+  <i class="fas fa-map-marker"></i>
+  <h6>{{ listing.address }}, {{ listing.postcode }}</h6>
 </div>
 
-<h1>Listing</h1>
+<div class="content-section">
+  <div class= "about-section">
+    <div class="grid-container">
+      <nav class="breadcrumb-container "aria-label="You are here:" role="navigation">
+        <ul class="breadcrumbs">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li>
+            <span class="show-for-sr">Current: </span> About Us
+          </li>
+        </ul>
+      </nav>
+      <a href="about.html" class="back-button">Back To Listings</a>
+      <div class="grid-x grid-margin-x">
+        <div class="cell small-8">
+          <img src="" alt="">
+          <div class="grid-x grid-margin-x">
+            <div class="cell small-6">
+              <ul class="listing-details">
+                <li>
+                  <i class="fas fa-money-bill-alt"></i>
+                  Price
+                  <span class="float-right">&#163;{{ listing.price | intcomma }}</span>
+                </li>
+                <li>
+                  <i class="fas fa-bed"></i>
+                  Bedrooms
+                  <span class="float-right">{{ listing.bedrooms }}</span>
+                </li>
+                <li>
+                  <i class="fas fa-bath"></i>
+                  Bathrooms
+                  <span class="float-right">{{ listing.bathrooms }}</span>
+                </li>
+                <li>
+                  <i class="fas fa-car"></i>
+                  Garage
+                  <span class="float-right">{{ listing.garage }}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="cell small-6">
+              <ul class="listing-details">
+                <li>
+                  <i class="fas fa-th-large"></i>
+                  Square Feet
+                  <span class="float-right">{{ listing.sqft }}</span>
+                </li>
+                <li>
+                  <i class="fas fa-pencil-ruler"></i>
+                  Lot Size
+                  <span class="float-right">{{ listing.lot_size }}</span>
+                </li>
+                <li>
+                  <i class="far fa-clock"></i>
+                  Listing Date
+                  <span class="float-right">{{ listing.list_date | timesince }}</span>
+                </li>
+                <li>
+                  <i class="fas fa-user"></i>
+                  Realtor
+                  <span class="float-right">{{ listing.realtor }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p>{{ listing.description }}</p>
+        </div>
+        <div class="cell small-4">
+          {% if mvp_realtors %}
+            {% for realtor in mvp_realtors %}
+              <div class="seller-of-the-month">
+                <img src="{{ realtor.photo.url }}" alt="">
+                <div class="seller-info">
+                  <h5>Seller Of The Month</h5>
+                  <h6>{{ realtor.name }}</h6>
+                  <p>{{ realtor.description }}</p>
+                </div>
+              </div>
+            {% endfor %}
+        {% else %}
+          <h3>No Employee Of The Month</h3>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

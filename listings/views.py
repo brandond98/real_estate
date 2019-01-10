@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Listing
+from realtors.models import Realtor
 
 # Create your views here.
 
@@ -15,7 +16,25 @@ def index(request):
     return render (request, 'apps/listings/listings.html', context)
 
 def listing(request, listing_id):
-    return render (request, 'apps/listings/listing.html')
+    listing = get_object_or_404(Listing, pk=listing_id)
+    realtors = Realtor.objects.all()
+    mvp_realtors = Realtor.objects.all().filter(is_mvp=True)
+
+    context = {
+        'listing': listing,
+        'realtors' : realtors,
+        'mvp_realtors' : mvp_realtors
+    }
+
+    return render(request, 'apps/listings/listing.html', context)
 
 def search(search):
-    return render (request, 'apps/listings/search.html')
+    return render(request, 'apps/listings/search.html')
+
+
+realtors = Realtor.objects.all()
+mvp_realtors = Realtor.objects.all().filter(is_mvp=True)
+context = {
+
+
+}
