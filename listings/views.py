@@ -24,7 +24,7 @@ def listing(request, listing_id):
 
     return render(request, 'apps/listings/listing.html', context)
 
-def search(search):
+def search(request):
     return render(request, 'apps/listings/search.html')
 
 

@@ -10,50 +10,40 @@
   <h2>Find Your Dream Home</h2>
   <h4>Thousands of beautiful properties for you</h4>
   <div class="grid-container">
-          <form action="">
+          <form action="{% url 'search' %}">
     <div class="property-search-bar grid-x grid-padding-x">
       <div class="medium-2 cell">
+          <input type="text" placeholder="Keywords">
+      </div>
+      <div class="medium-2 cell">
+          <input type="text" placeholder="City">
+      </div>
+      <div class="medium-2 cell">
           <select>
-            <option value="Location" data-content=>Location</option>
-            <option value="Lithuania">Lithuania</option>
-            <option value="hotdog">Hot Dog</option>
-            <option value="apollo">Apollo</option>
+            <option value="County" data-content=>County</option>
+            {% for key,value in county_choices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
           </select>
       </div>
       <div class="medium-2 cell">
-        <select>
-          <option value="husker">Property Type</option>
-          <option value="starbuck">Starbuck</option>
-          <option value="hotdog">Hot Dog</option>
-          <option value="apollo">Apollo</option>
-        </select>
+          <select>
+            <option value="Bedrooms" data-content=>Bedrooms</option>
+            {% for key,value in bedroom_choices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
+          </select>
       </div>
       <div class="medium-2 cell">
-        <select>
-          <option value="husker">Property Status</option>
-          <option value="starbuck">Starbuck</option>
-          <option value="hotdog">Hot Dog</option>
-          <option value="apollo">Apollo</option>
-        </select>
+          <select>
+            <option value="Price" data-content=>Price</option>
+            {% for key,value in price_choices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
+          </select>
       </div>
       <div class="medium-2 cell">
-        <select>
-          <option value="husker">Any Bedrooms</option>
-          <option value="starbuck">Starbuck</option>
-          <option value="hotdog">Hot Dog</option>
-          <option value="apollo">Apollo</option>
-        </select>
-      </div>
-      <div class="medium-2 cell">
-        <select>
-          <option value="husker"><i class="fas fa-map-marker-alt"></i>Any Bathrooms</option>
-          <option value="starbuck">Starbuck</option>
-          <option value="hotdog">Hot Dog</option>
-          <option value="apollo">Apollo</option>
-        </select>
-      </div>
-      <div class="medium-2 cell">
-        <button type="button" class="button">Search</button>
+        <button type="submit" class="button">Search</button>
           </form>
       </div>
     </div>
