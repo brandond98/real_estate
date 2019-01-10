@@ -9,7 +9,7 @@
 <div class="page-header">
   <h2>{{ listing.title }}</h2>
   <i class="fas fa-map-marker"></i>
-  <h6>{{ listing.address }}, {{ listing.postcode }}</h6>
+  <h6>{{ listing.city }}, {{ listing.county }}, {{ listing.postcode }}</h6>
 </div>
 
 <div class="content-section">
@@ -18,15 +18,91 @@
       <nav class="breadcrumb-container "aria-label="You are here:" role="navigation">
         <ul class="breadcrumbs">
           <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'listings' %}">Listings</a></li>
           <li>
-            <span class="show-for-sr">Current: </span> About Us
+            <span class="show-for-sr">Current: </span> {{ listing.title }}
           </li>
         </ul>
       </nav>
-      <a href="about.html" class="back-button">Back To Listings</a>
+      <a href="{% url 'listings' %}" class="back-button">Back To Listings</a>
       <div class="grid-x grid-margin-x">
-        <div class="cell small-8">
-          <img src="" alt="">
+        <div class="cell small-9">
+          <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="false">
+            <div class="orbit-wrapper">
+              <div class="orbit-controls">
+                <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+                <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+              </div>
+              <ul class="orbit-container">
+                <li class="is-active orbit-slide">
+                  <figure class="orbit-figure">
+                    <img class="orbit-image" src="{{ listing.photo_main.url }}" alt="Space">
+                  </figure>
+                </li>
+                {% if listing.photo_1 %}
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
+                    <img class="orbit-image" src="{{ listing.photo_1.url }}" alt="Space">
+                </li>
+                {% endif %}
+                {% if listing.photo_2 %}
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
+                    <img class="orbit-image" src="{{ listing.photo_2.url }}" alt="Space">
+                </li>
+                {% endif %}
+                {% if listing.photo_3 %}
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
+                    <img class="orbit-image" src="{{ listing.photo_3.url }}" alt="Space">
+                  </figure>
+                </li>
+                {% endif %}
+                {% if listing.photo_4 %}
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
+                    <img class="orbit-image" src="{{ listing.photo_4.url }}" alt="Space">
+                  </figure>
+                </li>
+                {% endif %}
+                {% if listing.photo_5 %}
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
+                    <img class="orbit-image" src="{{ listing.photo_5.url }}" alt="Space">
+                  </figure>
+                </li>
+                {% endif %}
+                {% if listing.photo_6 %}
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
+                    <img class="orbit-image" src="{{ listing.photo_6.url }}" alt="Space">
+                  </figure>
+                </li>
+                {% endif %}
+              </ul>
+            </div>
+            <nav class="orbit-bullets">
+              <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+              {% if listing.photo_1 %}
+              <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+              {% endif %}
+              {% if listing.photo_2 %}
+              <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+              {% endif %}
+              {% if listing.photo_3 %}
+              <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+              {% endif %}
+              {% if listing.photo_4 %}
+              <button data-slide="4"><span class="show-for-sr">Fourth slide details.</span></button>
+              {% endif %}
+              {% if listing.photo_5 %}
+              <button data-slide="5"><span class="show-for-sr">Fourth slide details.</span></button>
+              {% endif %}
+              {% if listing.photo_6 %}
+              <button data-slide="6"><span class="show-for-sr">Fourth slide details.</span></button>
+              {% endif %}
+            </nav>
+          </div>
           <div class="grid-x grid-margin-x">
             <div class="cell small-6">
               <ul class="listing-details">
@@ -79,25 +155,27 @@
           </div>
           <p>{{ listing.description }}</p>
         </div>
-        <div class="cell small-4">
-          {% if mvp_realtors %}
-            {% for realtor in mvp_realtors %}
+        <div class="cell small-3">
               <div class="seller-of-the-month">
-                <img src="{{ realtor.photo.url }}" alt="">
+                <img src="{{ listing.realtor.photo.url }}" alt="">
                 <div class="seller-info">
-                  <h5>Seller Of The Month</h5>
-                  <h6>{{ realtor.name }}</h6>
-                  <p>{{ realtor.description }}</p>
+                  <h5>Property Realtor</h5>
+                  <h6>{{ listing.realtor.name }}</h6>
                 </div>
               </div>
-            {% endfor %}
-        {% else %}
-          <h3>No Employee Of The Month</h3>
-        {% endif %}
+        <button class="button enquiry" data-open="exampleModal1">Make Enquiry</button>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div class="reveal" id="exampleModal1" data-reveal>
+  <h1>Awesome. I Have It.</h1>
+  <p class="lead">Your couch. It is mine.</p>
+  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
 
 {% endblock %}

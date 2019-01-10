@@ -1,35 +1,26 @@
 /* General */
-
-h1,h2,h3,h4,h5,p,span,li,a {
-
+h1, h2, h3, h4, h5, p, span, li, a {
   font-family: 'Open Sans', sans-serif;
 }
 
 html, body {
-    overflow: auto;
+  overflow: auto;
 }
 
 body {
-
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   height: 100%;
   padding: 0;
-
 }
 
-
 .container {
-
   margin: 0 auto;
   width: 80%;
-
 }
 
 /* Top Bar */
-
 .top-bar {
-
   background: #0098ef;
   float: left;
   width: 100%;
@@ -38,31 +29,26 @@ body {
 }
 
 .top-bar .grid-container {
-
   float: left;
   width: 100%;
 }
 
 .top-bar i {
-
   font-size: 14pt;
   padding-right: 10px;
 }
 
-.top-bar p{
-
+.top-bar p {
   margin: 0;
 }
 
-.call-container, .email-container, .address-container{
-
+.call-container, .email-container, .address-container {
   float: left;
   padding-right: 25px;
   font-size: 9pt;
 }
 
 .login-container a {
-
   float: left;
   margin: 0;
   padding-right: 25px;
@@ -70,50 +56,37 @@ body {
   color: #fff;
 }
 
-
-
-.social-icons ul{
-
+.social-icons ul {
   list-style: none;
   margin: 0;
   background: none;
-
-
 }
 
 .social-icons li {
-
   float: left;
   padding-right: 10px;
 }
 
 .social-icons li a {
-
   color: #fff;
 }
 
 /* Navigation */
-
 header {
-
   background: #121B22;
   float: left;
   width: 100%;
-  padding: 0 10px;;
+  padding: 0 10px;
+  ;
 }
 
-
 .logo {
-
   float: left;
   width: 60px;
   padding: 10px 0;
 }
 
-
-
 .navigation ul {
-
   margin: 0;
   list-style: none;
   padding: 0;
@@ -121,62 +94,52 @@ header {
 }
 
 .navigation li {
-
   display: inline-block;
   margin-left: 70px;
   padding-top: 25px;
 }
 
-.navigation a{
-
+.navigation a {
   color: #fff;
   text-transform: uppercase;
 }
 
 .navigation a:hover {
-
-  color:#0098ef;
+  color: #0098ef;
 }
 
-footer{
-
+footer {
   text-align: center;
   padding: 40px;
   background: #0098ef;
   float: left;
   width: 100%;
-
 }
 
 .property-search {
-
   text-align: center;
   padding: 200px 100px;
   float: left;
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/houses.jpg) ;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/houses.jpg);
   background-attachment: fixed;
   background-size: cover;
-
 }
 
-.property-search .grid-padding-x > .cell {
-
+.property-search .grid-padding-x>.cell {
   padding-left: 5px;
   padding-right: 5px;
 }
 
-.property-search .button{
-
+.property-search .button {
   width: 100%;
   margin: 0;
   border-radius: 5px;
-  background:#0098ef;
+  background: #0098ef;
   text-transform: uppercase;
 }
 
 .property-search h2 {
-
   font-size: 40pt;
   color: #fff;
   font-weight: bold;
@@ -184,14 +147,12 @@ footer{
 }
 
 .property-search h4 {
-
   color: #fff;
   font-size: 15pt;
   margin-bottom: 40px;
 }
 
 .property-search-bar {
-
   background: black;
   float: left;
   width: 100%;
@@ -201,7 +162,6 @@ footer{
 }
 
 .property-search select {
-
   margin: 0;
   border-radius: 5px;
   font-size: 11pt;
@@ -209,24 +169,20 @@ footer{
 }
 
 .recent-listings {
-
   float: left;
   width: 100%;
   padding: 100px 0;
 }
 
 .listing-card-head {
-
   position: relative;
   width: 100%;
   max-width: 400px;
   margin: auto;
   overflow: hidden;
-
 }
 
 .content-details {
-
   position: absolute;
   text-align: center;
   padding-left: 1em;
@@ -243,17 +199,17 @@ footer{
   transition: all 0.3s ease-in-out 0s;
 }
 
-.listing-card-head:hover .content-details{
+.listing-card-head:hover .content-details {
   top: 50%;
   left: 50%;
   opacity: 1;
 }
 
-.fadeIn-right{
+.fadeIn-right {
   left: 80%;
 }
 
-.content-details a{
+.content-details a {
   color: #fff;
   text-transform: uppercase;
   font-size: 16pt;
@@ -261,13 +217,11 @@ footer{
 }
 
 .content-details a:hover {
-
-  color:#0098ef;
+  color: #0098ef;
 }
 
 .listing-card-head .content-overlay {
-
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -281,71 +235,60 @@ footer{
   transition: all 0.4s ease-in-out 0s;
 }
 
-.listing-card-head:hover .content-overlay{
+.listing-card-head:hover .content-overlay {
   opacity: 1;
 }
 
 .listing-card-head img {
-
-  -webkit-box-shadow: 0px 0px 7px 0px rgba(79,79,79,1);
--moz-box-shadow: 0px 0px 7px 0px rgba(79,79,79,1);
-box-shadow: 0px 0px 7px 0px rgba(79,79,79,1);
-width: 100%;
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(79, 79, 79, 1);
+  -moz-box-shadow: 0px 0px 7px 0px rgba(79, 79, 79, 1);
+  box-shadow: 0px 0px 7px 0px rgba(79, 79, 79, 1);
+  width: 100%;
 }
 
 .listing-card-bottom h2 {
-
   font-size: 14pt;
   font-weight: 600;
   margin-bottom: 15px;
-
 }
 
 .listing-card-bottom {
-
   padding: 25px;
   background: #fff;
 }
 
 .listing-card-bottom i {
-
   color: #0098ef;
   margin-right: 10px;
 }
 
 .listing-card-bottom p {
-
   margin-bottom: 15px;
   font-size: 11pt;
 }
 
 .recent-container {
-
   background: #eee;
   float: left;
   width: 100%;
 }
 
 .listing-card-bottom ul {
-
   list-style: none;
   margin: 0 0 15px 0;
   float: left;
   width: 100%
-
 }
 
 .listing-card-bottom {
-
   border-bottom: 1px solid #0098ef;
-  -webkit-box-shadow: 0px 0px 7px 0px rgba(79,79,79,1);
--moz-box-shadow: 0px 0px 7px 0px rgba(79,79,79,1);
-box-shadow: 0px 0px 7px 0px rgba(79,79,79,1);
-display: inline-block;
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(79, 79, 79, 1);
+  -moz-box-shadow: 0px 0px 7px 0px rgba(79, 79, 79, 1);
+  box-shadow: 0px 0px 7px 0px rgba(79, 79, 79, 1);
+  display: inline-block;
 }
 
 .listing-card-bottom li {
-
   width: 50%;
   font-size: 11pt;
   float: left;
@@ -353,24 +296,20 @@ display: inline-block;
 }
 
 .listing-card-bottom i {
-
   margin-right: 10px;
 }
 
 .listing-card-bottom h3 {
-
-  font-weight:600;
+  font-weight: 600;
   font-size: 14pt;
 }
 
 .listing-card-bottom h4 {
-
   font-size: 10pt;
   display: inline;
 }
 
 .listing-card span {
-
   position: absolute;
   top: 10px;
   right: 10px;
@@ -382,28 +321,23 @@ display: inline-block;
 }
 
 .sale {
-
   background: #e54242;
 }
 
 .rent {
-
   background: #ffb200;
 }
 
 .listing-card {
-
   position: relative;
 }
 
 .about-us {
-
   padding: 100px;
   color: red;
 }
 
 .page-header {
-
   text-align: center;
   padding: 100px;
   float: left;
@@ -411,95 +345,78 @@ display: inline-block;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/houses2.jpg);
   background-position: center;
   color: #fff;
-
 }
 
 .page-header i {
-
   display: inline;
   margin-right: 5px;
 }
 
-.page-header h6{
-
+.page-header h6 {
   display: inline;
 }
-.content-section{
 
-  padding: 80px 0 ;
+.content-section {
+  padding: 80px 0;
   float: left;
   width: 100%;
 }
-.breadcrumb-container {
 
+.breadcrumb-container {
   background: #eee;
   padding: 10px 20px;
   border-radius: 5px;
   margin-bottom: 40px;
 }
 
-.about-section h3  {
-
+.about-section h3 {
   margin-bottom: 20px;
   font-size: 15pt;
 }
 
-.about-section img  {
-
+.about-section img {
   margin-bottom: 20px;
-
 }
 
-.about-section h4  {
-
+.about-section h4 {
   font-size: 13pt;
   margin-bottom: 20px;
 }
 
 .about-section p {
-
   font-size: 11pt;
 }
 
 .breadcrumbs {
-
   margin: 0;
 }
 
 .breadcrumbs li {
-
-font-size: 11pt;
-
+  font-size: 11pt;
 }
 
 .seller-info {
-
   border-bottom: 1px solid #eee;
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
   padding: 20px;
-
 }
 
 .seller-info p {
-
   margin: 0;
   font-size: 10pt;
 }
 
 .seller-info h6 {
-
   color: #0098ef;
+  margin: 0;
 }
 
-
 .seller-of-the-month img {
-
   margin: 0;
 }
 
 .text-divider {
-
   padding: 80px;
   text-align: center;
   float: left;
@@ -509,59 +426,49 @@ font-size: 11pt;
 }
 
 .text-divider p {
-
   margin: 0;
 }
 
 .text-divider h3 {
-
   margin-bottom: 20px;
 }
 
 .active {
-
   color: #0098ef !important;
-
-
 }
 
 .margin-bottom {
-
   margin-bottom: 40px;
 }
 
 .back-button {
-
   background: #eee;
   padding: 10px;
   font-size: 10pt;
   color: #333;
   border-radius: 5px;
-
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
 .listing-details {
-
   list-style: none;
-  margin: 0;
-
+  margin: 0 0 20px 0;
 }
 
 .listing-details li {
-
   padding: 10px 0;
   border-bottom: 1px solid #eee;
   color: #0098ef;
-  font-size: 10pt;
+  font-size: 9pt;
 }
 
 .listing-details i {
-
   margin-right: 5px;
-
 }
 
-
-
-
-
+.enquiry {
+  margin-top: 20px;
+  background: #0098ef;
+  border-radius: 5px;
+}
