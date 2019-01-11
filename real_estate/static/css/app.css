@@ -473,3 +473,12 @@ footer {
   border-radius: 5px;
 }
 
+input {
+
+  margin:0 !important;
+}
+
+.property-search.search-page {
+
+  padding: 100px;
+}

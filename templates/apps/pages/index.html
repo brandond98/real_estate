@@ -10,42 +10,42 @@
   <h2>Find Your Dream Home</h2>
   <h4>Thousands of beautiful properties for you</h4>
   <div class="grid-container">
-          <form action="{% url 'search' %}">
-    <div class="property-search-bar grid-x grid-padding-x">
-      <div class="medium-2 cell">
-          <input type="text" placeholder="Keywords">
-      </div>
-      <div class="medium-2 cell">
-          <input type="text" placeholder="City">
-      </div>
-      <div class="medium-2 cell">
-          <select>
-            <option value="County" data-content=>County</option>
+    <form action="{% url 'search' %}">
+      <div class="property-search-bar grid-x grid-padding-x">
+        <div class="medium-2 cell">
+          <input name="keywords" type="text" placeholder="Keywords">
+        </div>
+        <div class="medium-2 cell">
+          <input name="city" type="text" placeholder="City">
+        </div>
+        <div class="medium-2 cell">
+          <select name="county">
+            <option selected="true" disabled="disabled">County</option>
             {% for key,value in county_choices.items %}
-              <option value="{{ key }}">{{ value }}</option>
+            <option value="{{ key }}">{{ value }}</option>
             {% endfor %}
           </select>
-      </div>
-      <div class="medium-2 cell">
-          <select>
-            <option value="Bedrooms" data-content=>Bedrooms</option>
+        </div>
+        <div class="medium-2 cell">
+          <select name="bedrooms">
+            <option selected="true" disabled="disabled">Bedrooms</option>
             {% for key,value in bedroom_choices.items %}
-              <option value="{{ key }}">{{ value }}</option>
+            <option value="{{ key }}">{{ value }}</option>
             {% endfor %}
           </select>
-      </div>
-      <div class="medium-2 cell">
-          <select>
-            <option value="Price" data-content=>Price</option>
+        </div>
+        <div class="medium-2 cell">
+          <select name="price">
+            <option selected="true" disabled="disabled">Price</option>
             {% for key,value in price_choices.items %}
-              <option value="{{ key }}">{{ value }}</option>
+            <option value="{{ key }}">{{ value }}</option>
             {% endfor %}
           </select>
-      </div>
-      <div class="medium-2 cell">
-        <button type="submit" class="button">Search</button>
-          </form>
-      </div>
+        </div>
+        <div class="medium-2 cell">
+          <button type="submit" class="button">Search</button>
+        </div>
+      </form>
     </div>
   </div>
 
