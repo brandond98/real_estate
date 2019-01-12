@@ -509,6 +509,7 @@ input {
         overflow:auto;
         border-radius: 5px;
         padding: 40px;
+        display: table;
     }
 
   .log-in-box h3 {
@@ -519,6 +520,7 @@ input {
 
   .log-in-box input {
     margin-bottom: 30px !important;
+    border-radius: 5px;
   }
 
   .log-in-box .button {
