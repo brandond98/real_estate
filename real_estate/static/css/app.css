@@ -10,7 +10,7 @@ html, body {
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  height: 100%;
+  height: 100vh;
   padding: 0;
 }
 
@@ -482,3 +482,57 @@ input {
 
   padding: 100px;
 }
+
+.login-page {
+
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/houses.jpg);
+  background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ height: 100%;
+
+}
+
+.log-in-box {
+
+        width: 400px;
+        height:400px;
+        background: #eee;
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        max-width:100%;
+        max-height:100%;
+        overflow:auto;
+        border-radius: 5px;
+        padding: 40px;
+    }
+
+  .log-in-box h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color:#0098ef;
+  }
+
+  .log-in-box input {
+    margin-bottom: 30px !important;
+  }
+
+  .log-in-box .button {
+
+    width: 100%;
+    border-radius: 5px;
+    color: #fff;
+    background: #0098ef;
+    margin-bottom: 20px;
+  }
+
+  .log-in-box p {
+
+    text-align: center;
+    font-size: 10pt;
+    margin: 0;
+  }
