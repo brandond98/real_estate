@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css/foundation.css' %}">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+  <title>Real Estate Company</title>
+</head>
+
+<body>
+  <div class="login-page">
+    <div class="log-in-box">
+      <h3>Register</h3>
+      <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        <label>First Name*
+            <input type="text" placeholder="First Name" required>
+        </label>
+        <label>Last Name*
+            <input type="text" placeholder="Last Name" required>
+        </label>
+        <label>Username*
+            <input type="text" placeholder="Username" required>
+        </label>
+        <label>Email*
+            <input type="text" placeholder="Email" required>
+        </label>
+        <label>Password*
+            <input type="password" placeholder="Password" required>
+        </label>
+        <label>Confirm Password*
+            <input type="password" placeholder="Confirm Password" required>
+        </label>
+        <button type="submit" class="button">Register</button>
+        <p><a href="{% url 'login' %}">Already a member? Log in here!</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

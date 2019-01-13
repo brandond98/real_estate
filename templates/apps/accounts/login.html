@@ -15,21 +15,22 @@
 </head>
 
 <body>
-
   <div class="login-page">
     <div class="log-in-box">
       <h3>Welcome Back!</h3>
-      <label>Username
-          <input type="text" placeholder="Username">
-      </label>
-      <label>Password
-          <input type="text" placeholder="Password">
-      </label>
-      <a href="about.html" class="button">Log In</a>
-      <p><a href="#">Not a member? Register here!</a></p> 
+      <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <label>Username
+            <input type="text" placeholder="Username" required>
+        </label>
+        <label>Password
+            <input type="password" placeholder="Password" required>
+        </label>
+        <button type="submit" class="button">Log In</button>
+        <p><a href="{% url 'register' %}">Not a member? Register here!</a></p>
+      </form>
     </div>
   </div>
-
 </body>
 
 </html>
