@@ -2,7 +2,13 @@ from django.shortcuts import render, redirect
 
 def register(request):
     if request.method == 'POST':
-        return
+        #Get form values
+        first_name = request.POST['first_name']
+        first_name = request.POST['last_name']
+        first_name = request.POST['username']
+        first_name = request.POST['email']
+        first_name = request.POST['password']
+        first_name = request.POST['password2']
     else:
         return render(request, 'apps/accounts/register.html')
 

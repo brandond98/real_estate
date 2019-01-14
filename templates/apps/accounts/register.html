@@ -18,12 +18,17 @@
   <div class="login-page">
     <div class="log-in-box register">
       <h3>Register</h3>
-      <form action="{% url 'register' %}" method="POST">
+      <form action="{% url 'register' %}" method="POST" data-abide novalidate>
         {% csrf_token %}
         <div class="grid-x grid-padding-x">
+          <div class="medium-12 cell">
+            <div data-abide-error class="alert callout" style="display: none;">
+              <p><i class="fi-alert"></i> There are some errors in your form.</p>
+            </div>
+          </div>
           <div class="medium-6 cell">
             <label>First Name*
-              <input type="text" placeholder="First Name" required>
+              <input type="text" placeholder="First Name" aria-errormessage="example1Error1" required>
             </label>
           </div>
           <div class="medium-6 cell">
@@ -43,20 +48,29 @@
           </div>
           <div class="medium-6 cell">
             <label>Password*
-              <input type="password" placeholder="Password" required>
+              <input type="password" id="password" placeholder="Password" required>
             </label>
           </div>
           <div class="medium-6 cell">
             <label>Confirm Password*
-              <input type="password" placeholder="Confirm Password" required>
+              <input type="password" placeholder="Confirm Password" required required pattern="alpha_numeric" data-equalto="password" aria-errormessage="example1Error3">
+              <span class="form-error" id="example1Error3">
+                Passwords do not match
+              </span>
             </label>
           </div>
           <button type="submit" class="button float-center">Register</button>
+        </div>
       </form>
-    </div>
     <p><a href="{% url 'login' %}">Already a member? Log in here!</a></p>
   </div>
   </div>
+
+  <script src="{% static 'js/vendor/jquery.js' %}"></script>
+  <script src="{% static 'js/vendor/what-input.js' %}"></script>
+  <script src="{% static 'js/vendor/foundation.js' %}"></script>
+  <script src="{% static 'js/app.js' %}"></script>
+
 </body>
 
 </html>

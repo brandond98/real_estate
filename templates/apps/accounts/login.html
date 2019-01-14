@@ -18,8 +18,11 @@
   <div class="login-page">
     <div class="log-in-box">
       <h3>Welcome Back!</h3>
-      <form action="{% url 'login' %}" method="POST">
+      <form action="{% url 'register' %}" method="POST" data-abide novalidate>
         {% csrf_token %}
+        <div data-abide-error class="alert callout" style="display: none;">
+          <p><i class="fi-alert"></i> There are some errors in your form.</p>
+        </div>
         <label>Username
             <input type="text" placeholder="Username" required>
         </label>
@@ -31,6 +34,12 @@
       </form>
     </div>
   </div>
+
+  <script src="{% static 'js/vendor/jquery.js' %}"></script>
+  <script src="{% static 'js/vendor/what-input.js' %}"></script>
+  <script src="{% static 'js/vendor/foundation.js' %}"></script>
+  <script src="{% static 'js/app.js' %}"></script>
+
 </body>
 
 </html>
