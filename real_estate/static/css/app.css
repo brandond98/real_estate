@@ -511,6 +511,10 @@ input {
         padding: 40px;
         display: table;
     }
+.log-in-box.register {
+
+  width: 800px;
+}
 
   .log-in-box h3 {
     text-align: center;
@@ -530,6 +534,13 @@ input {
     color: #fff;
     background: #0098ef;
     margin-bottom: 20px;
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+
+  .log-in-box.register .button {
+
+    width: 30%;
   }
 
   .log-in-box p {

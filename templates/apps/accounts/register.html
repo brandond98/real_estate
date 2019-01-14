@@ -16,32 +16,46 @@
 
 <body>
   <div class="login-page">
-    <div class="log-in-box">
+    <div class="log-in-box register">
       <h3>Register</h3>
       <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
-        <label>First Name*
-            <input type="text" placeholder="First Name" required>
-        </label>
-        <label>Last Name*
-            <input type="text" placeholder="Last Name" required>
-        </label>
-        <label>Username*
-            <input type="text" placeholder="Username" required>
-        </label>
-        <label>Email*
-            <input type="text" placeholder="Email" required>
-        </label>
-        <label>Password*
-            <input type="password" placeholder="Password" required>
-        </label>
-        <label>Confirm Password*
-            <input type="password" placeholder="Confirm Password" required>
-        </label>
-        <button type="submit" class="button">Register</button>
-        <p><a href="{% url 'login' %}">Already a member? Log in here!</a></p>
+        <div class="grid-x grid-padding-x">
+          <div class="medium-6 cell">
+            <label>First Name*
+              <input type="text" placeholder="First Name" required>
+            </label>
+          </div>
+          <div class="medium-6 cell">
+            <label>Last Name*
+              <input type="text" placeholder="Last Name" required>
+            </label>
+          </div>
+          <div class="medium-6 cell">
+            <label>Username*
+              <input type="text" placeholder="Username" required>
+            </label>
+          </div>
+          <div class="medium-6 cell">
+            <label>Email*
+              <input type="text" placeholder="Email" required>
+            </label>
+          </div>
+          <div class="medium-6 cell">
+            <label>Password*
+              <input type="password" placeholder="Password" required>
+            </label>
+          </div>
+          <div class="medium-6 cell">
+            <label>Confirm Password*
+              <input type="password" placeholder="Confirm Password" required>
+            </label>
+          </div>
+          <button type="submit" class="button float-center">Register</button>
       </form>
     </div>
+    <p><a href="{% url 'login' %}">Already a member? Log in here!</a></p>
+  </div>
   </div>
 </body>
 
