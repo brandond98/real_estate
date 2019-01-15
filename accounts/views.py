@@ -42,7 +42,9 @@ def login(request):
     return render(request, 'apps/accounts/login.html')
 
 def logout(request):
-    return redirect('index')
+    if request.method == 'POST':
+        auth.logout(request)
+        return redirect('index')
 
 def dashboard(request):
     return render(request, 'apps/accounts/dashboard.html')

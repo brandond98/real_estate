@@ -549,3 +549,11 @@ input {
     font-size: 10pt;
     margin: 0;
   }
+
+
+.dashboard td {
+
+  font-size: 10pt;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

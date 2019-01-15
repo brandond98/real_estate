@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block title %} | Dashb {% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <h2>Welcome Back John</h2>
+  <h6>Properties you have enquired about are listed below</h6>
+</div>
+
+<div class="content-section dashboard">
+  <div class="grid-container">
+    <nav class="breadcrumb-container "aria-label="You are here:" role="navigation">
+      <ul class="breadcrumbs">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li>
+          <span class="show-for-sr">Current: </span> Your Enquiries
+        </li>
+      </ul>
+    </nav>
+    <div >
+      <table>
+  <thead>
+    <tr>
+      <th width="50">#</th>
+      <th width="700">Property</th>
+      <th>Enquiry Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+      <td>01/02/2019</td>
+      <td><a href="#">View Listing</a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>01/02/2019</td>
+      <td><a href="#">View Listing</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>01/02/2019</td>
+      <td><a href="#">View Listing</a></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

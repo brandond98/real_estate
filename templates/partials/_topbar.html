@@ -16,8 +16,17 @@
       </div>
       <div class="large-4 cell">
         <div class="login-container">
-          <p><a href="{% url 'login' %}"><i class="fas fa-user"></i></i>Login</a></p>
-          <p><a href="{% url 'register' %}"><i class="fas fa-sign-in-alt"></i>Register</a></p>
+          {% if user.is_authenticated %}
+            <p><a href="{% url 'dashboard' %}"><i class="fas fa-user-circle"></i></i>{{ user.first_name }}</a></p>
+            <p><a href="javascript:{document.getElementById('logout').submit()}"><i class="fas fa-sign-out-alt"></i>Logout</a></p>
+            <form id="logout" action="{% url 'logout' %}" method="POST">
+              {% csrf_token %}
+              <input type="hidden">
+            </form>
+          {% else %}
+            <p><a href="{% url 'login' %}"><i class="fas fa-user"></i></i>Login</a></p>
+            <p><a href="{% url 'register' %}"><i class="fas fa-sign-in-alt"></i>Register</a></p>
+          {% endif %}
         </div>
         <div class="social-icons">
           <ul>
