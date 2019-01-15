@@ -473,87 +473,98 @@ footer {
   border-radius: 5px;
 }
 
-input {
-
-  margin:0 !important;
-}
 
 .property-search.search-page {
-
   padding: 100px;
 }
 
 .login-page {
-
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/houses.jpg);
   background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
- height: 100%;
-
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 
 .log-in-box {
+  width: 400px;
+  height: 400px;
+  background: #eee;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  border-radius: 5px;
+  padding: 40px;
+  display: table;
+}
 
-        width: 400px;
-        height:400px;
-        background: #eee;
-        position:absolute;
-        left:0;
-        right:0;
-        top:0;
-        bottom:0;
-        margin:auto;
-        max-width:100%;
-        max-height:100%;
-        overflow:auto;
-        border-radius: 5px;
-        padding: 40px;
-        display: table;
-    }
 .log-in-box.register {
-
   width: 800px;
 }
 
-  .log-in-box h3 {
-    text-align: center;
-    margin-bottom: 30px;
-    color:#0098ef;
-  }
+.log-in-box h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #0098ef;
+}
 
-  .log-in-box input {
-    margin-bottom: 30px !important;
-    border-radius: 5px;
-  }
+.log-in-box input {
+  margin-bottom: 30px !important;
+  border-radius: 5px;
+}
 
-  .log-in-box .button {
+.submit {
+  width: 100%;
+  border-radius: 5px;
+  color: #fff;
+  background: #0098ef;
+  margin-bottom: 20px;
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem;
+}
 
-    width: 100%;
-    border-radius: 5px;
-    color: #fff;
-    background: #0098ef;
-    margin-bottom: 20px;
-    padding-right: 0.9375rem;
-    padding-left: 0.9375rem;
-  }
+.log-in-box.register .submit {
+  width: 30%;
+}
 
-  .log-in-box.register .button {
-
-    width: 30%;
-  }
-
-  .log-in-box p {
-
-    text-align: center;
-    font-size: 10pt;
-    margin: 0;
-  }
-
+.log-in-box p {
+  text-align: center;
+  font-size: 10pt;
+  margin: 0;
+}
 
 .dashboard td {
-
   font-size: 10pt;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.reveal {
+
+  padding: 60px;
+  border-radius: 5px;
+}
+
+.reveal input, .reveal textarea {
+
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.reveal h2 {
+
+  text-align: center;
+  color:#0098ef;
+}
+
+.property-search-bar input {
+
+  margin: 0;
+  border-radius: 5px;
 }

@@ -172,12 +172,33 @@
   </div>
 </div>
 <div class="reveal" id="exampleModal1" data-reveal>
-  <h1>Awesome. I Have It.</h1>
-  <p class="lead">Your couch. It is mine.</p>
-  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-  <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
+  <h2>Enquire Now</h2>
+  <form class="{% url 'contact' %}" action="index.html" method="POST">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+      <input type="hidden" name="user_id" value="{{ user.id }}">
+    {% else %}
+      <input type="hidden" name="user_id" value="0">
+    {% endif %}
+    <input type="hidden" name="realtor_email" value="{{ listing.realtor.email }}">
+    <input type="hidden" name="listing_id" value="{{ listing.id }}">
+    <label>Property:
+      <input type="text" name="listing" value="{{ listing.title }}" disabled>
+    </label>
+    <label>Name:
+      <input type="text" name="name" {% if user.is_authenticated %} value="{{ user.first_name }} {{ user.last_name }}" {% endif %} required>
+    </label>
+    <label>Email:
+      <input type="text" name="email" {% if user.is_authenticated %} value="{{ user.email }}" {% endif %} required>
+    </label>
+    <label>Phone:
+      <input type="text" name="phone" value="" required>
+    </label>
+    <label>Message:
+      <textarea name="message"></textarea>
+    </label>
+    <button type="submit" class="button submit">Submit</button>
+  </form>
 </div>
 
 {% endblock %}
