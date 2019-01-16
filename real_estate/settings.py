@@ -145,3 +145,11 @@ MESSAGE_TAGS = {
     messages.INFO: '',
     50: 'critical',
 }
+
+# Email Configuration
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'bdickson1212@gmail.com'
+EMAIL_HOST_PASSWORD = 'brandon1998'
+EMAIL_USE_TLS = True

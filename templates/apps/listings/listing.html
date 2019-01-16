@@ -173,7 +173,7 @@
 </div>
 <div class="reveal" id="exampleModal1" data-reveal>
   <h2>Enquire Now</h2>
-  <form class="{% url 'contact' %}" action="index.html" method="POST">
+  <form action="{% url 'contact' %}" method="POST">
     {% csrf_token %}
     {% if user.is_authenticated %}
       <input type="hidden" name="user_id" value="{{ user.id }}">
@@ -183,7 +183,7 @@
     <input type="hidden" name="realtor_email" value="{{ listing.realtor.email }}">
     <input type="hidden" name="listing_id" value="{{ listing.id }}">
     <label>Property:
-      <input type="text" name="listing" value="{{ listing.title }}" disabled>
+      <input type="text" name="listing" value="{{ listing.title }}">
     </label>
     <label>Name:
       <input type="text" name="name" {% if user.is_authenticated %} value="{{ user.first_name }} {{ user.last_name }}" {% endif %} required>

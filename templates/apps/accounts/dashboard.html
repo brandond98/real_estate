@@ -7,13 +7,13 @@
 {% block content %}
 
 <div class="page-header">
-  <h2>Welcome Back John</h2>
+  <h2>Welcome Back, {{ user.first_name }}</h2>
   <h6>Properties you have enquired about are listed below</h6>
 </div>
 
 <div class="content-section dashboard">
   <div class="grid-container">
-    <nav class="breadcrumb-container "aria-label="You are here:" role="navigation">
+    <nav class="breadcrumb-container " aria-label="You are here:" role="navigation">
       <ul class="breadcrumbs">
         <li><a href="{% url 'index' %}">Home</a></li>
         <li>
@@ -21,37 +21,31 @@
         </li>
       </ul>
     </nav>
-    <div >
-      <table>
-  <thead>
-    <tr>
-      <th width="50">#</th>
-      <th width="700">Property</th>
-      <th>Enquiry Date</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-      <td>01/02/2019</td>
-      <td><a href="#">View Listing</a></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-      <td>01/02/2019</td>
-      <td><a href="#">View Listing</a></td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-      <td>01/02/2019</td>
-      <td><a href="#">View Listing</a></td>
-    </tr>
-  </tbody>
-</table>
+    <div>
+      {% if contacts %}
+        <table>
+          <thead>
+            <tr>
+              <th width="50">#</th>
+              <th width="700">Property</th>
+              <th>Enquiry Date</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for contact in contacts %}
+              <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.listing }}</td>
+                <td>{{ contact.contact_date | date:"d F Y" }}</td>
+                <td><a href="{% url 'listing' contact.listing_id %}">View Listing</a></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+      <h2>You haven't made any enquiries yet.</h2>
+      {% endif %}
     </div>
   </div>
 </div>
