@@ -5,6 +5,7 @@ h1, h2, h3, h4, h5, p, span, li, a {
 
 html, body {
   overflow: auto;
+  overflow-x: hidden;
 }
 
 body {
@@ -51,7 +52,7 @@ body {
 .login-container a {
   float: left;
   margin: 0;
-  padding-right: 25px;
+  margin-left: 25px;
   font-size: 9pt;
   color: #fff;
 }
@@ -72,36 +73,36 @@ body {
 }
 
 /* Navigation */
-header {
-  background: #121B22;
-  float: left;
-  width: 100%;
-  padding: 0 10px;
-  ;
-}
 
 .logo {
-  float: left;
-  width: 60px;
-  padding: 10px 0;
+  width: 50px;
 }
 
-.navigation ul {
+.navigation {
   margin: 0;
   list-style: none;
   padding: 0;
-  margin-right: 90px
 }
 
 .navigation li {
   display: inline-block;
-  margin-left: 70px;
-  padding-top: 25px;
+  margin-left: 80px;
+  vertical-align: -webkit-baseline-middle;
 }
 
 .navigation a {
   color: #fff;
   text-transform: uppercase;
+  font-size: 11pt;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.nav-container{
+
+  background: #333;
+  float: left;
+  width: 100%;
+  padding: 15px 0;
 }
 
 .navigation a:hover {
@@ -169,7 +170,6 @@ footer {
 }
 
 .recent-listings {
-  float: left;
   width: 100%;
   padding: 100px 0;
 }
@@ -473,7 +473,6 @@ footer {
   border-radius: 5px;
 }
 
-
 .property-search.search-page {
   padding: 100px;
 }
@@ -487,7 +486,7 @@ footer {
 }
 
 .log-in-box {
-  width: 400px;
+  width: 500px;
   height: 400px;
   background: #eee;
   position: absolute;
@@ -546,32 +545,48 @@ footer {
 }
 
 .reveal {
-
   padding: 60px;
   border-radius: 5px;
 }
 
 .reveal input, .reveal textarea {
-
   border-radius: 5px;
   margin-bottom: 20px;
 }
 
 .reveal h2 {
-
   text-align: center;
-  color:#0098ef;
+  color: #0098ef;
 }
 
 .property-search-bar input {
-
   margin: 0;
   border-radius: 5px;
 }
 
 .recent-listings h2 {
-
   text-align: center;
-margin-bottom: 40px;
-color: #0098ef;
+  margin-bottom: 40px;
+  color: #0098ef;
+}
+
+.callout {
+  text-align: center;
+}
+
+.callout p, .callout strong {
+  display: inline-block;
+}
+
+.home-alert {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin-top: 40px;
+}
+
+.login-container {
+
+  float: right;
 }

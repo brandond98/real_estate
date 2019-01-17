@@ -17,7 +17,8 @@
 <body>
   <div class="login-page">
     <div class="log-in-box">
-      <h3>Welcome Back!</h3>
+      <h3>Welcome!</h3>
+      {% include "../../partials/_alerts.html" %}
       <form action="{% url 'login' %}" method="POST" data-abide novalidate>
         {% csrf_token %}
         <div data-abide-error class="alert callout" style="display: none;">
