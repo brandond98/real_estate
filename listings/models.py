@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime
 from realtors.models import Realtor
 from multiselectfield import MultiSelectField
-
+from . import choices
 # Create your models here.
 
 class Listing(models.Model):
@@ -40,7 +40,7 @@ class Listing(models.Model):
     )
 
     county = models.CharField(
-
+        choices=choices.county_choices,
         max_length=100
     )
 

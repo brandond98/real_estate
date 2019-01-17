@@ -59,8 +59,7 @@ def search(request):
             queryset_list = queryset_list.filter(price__lte=price)
 
     context = {
-
-        'county_choices': county_choices,
+        'county_choices': dict((x, y) for x, y in county_choices),
         'bedroom_choices': bedroom_choices,
         'price_choices': price_choices,
         'listings': queryset_list,

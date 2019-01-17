@@ -1,0 +1,19 @@
+{% if messages %}
+  {% for message in messages %}
+    <div id="message" class="container">
+      <div class="callout {{ message.tags }}" data-closable>
+        <button class="close-button" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            Error
+          {% else %}
+            {{ message.tags|title }}
+          {% endif %}
+        </strong>
+        <p>{{ message }}</p>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}

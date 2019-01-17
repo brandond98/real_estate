@@ -18,6 +18,7 @@
   <div class="login-page">
     <div class="log-in-box register">
       <h3>Register</h3>
+      {% include "../../partials/_alerts.html" %}
       <form action="{% url 'register' %}" method="POST" data-abide novalidate>
         {% csrf_token %}
         <div class="grid-x grid-padding-x">
@@ -59,7 +60,7 @@
               </span>
             </label>
           </div>
-          <button type="submit" class="button float-center">Register</button>
+          <button type="submit" class="button  submit float-center">Register</button>
         </div>
       </form>
     <p><a href="{% url 'login' %}">Already a member? Log in here!</a></p>

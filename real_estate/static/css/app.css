@@ -568,3 +568,10 @@ footer {
   margin: 0;
   border-radius: 5px;
 }
+
+.recent-listings h2 {
+
+  text-align: center;
+margin-bottom: 40px;
+color: #0098ef;
+}
