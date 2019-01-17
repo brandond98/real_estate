@@ -15,64 +15,26 @@ body {
   padding: 0;
 }
 
-.container {
-  margin: 0 auto;
-  width: 80%;
-}
+/* Navigation */
 
-/* Top Bar */
-.top-bar {
-  background: #0098ef;
-  float: left;
-  width: 100%;
-  padding: 10px 0;
-  color: #fff;
-}
 
-.top-bar .grid-container {
-  float: left;
-  width: 100%;
-}
-
-.top-bar i {
+.nav-container i {
   font-size: 14pt;
   padding-right: 10px;
 }
 
-.top-bar p {
-  margin: 0;
-}
-
-.call-container, .email-container, .address-container {
-  float: left;
-  padding-right: 25px;
-  font-size: 9pt;
-}
-
 .login-container a {
-  float: left;
-  margin: 0;
   margin-left: 25px;
   font-size: 9pt;
   color: #fff;
 }
 
-.social-icons ul {
-  list-style: none;
-  margin: 0;
-  background: none;
-}
+.login-container {
 
-.social-icons li {
-  float: left;
-  padding-right: 10px;
+  float: right;
+  display: inline-block;
+  padding-top: 12px;
 }
-
-.social-icons li a {
-  color: #fff;
-}
-
-/* Navigation */
 
 .logo {
   width: 50px;
@@ -82,19 +44,19 @@ body {
   margin: 0;
   list-style: none;
   padding: 0;
+  display: inline-block;
 }
+
 
 .navigation li {
   display: inline-block;
   margin-left: 80px;
-  vertical-align: -webkit-baseline-middle;
 }
 
-.navigation a {
+.nav-container a {
   color: #fff;
   text-transform: uppercase;
   font-size: 11pt;
-    vertical-align: -webkit-baseline-middle;
 }
 
 .nav-container{
@@ -586,7 +548,3 @@ footer {
   margin-top: 40px;
 }
 
-.login-container {
-
-  float: right;
-}

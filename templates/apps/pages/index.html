@@ -9,12 +9,12 @@
 {% block content %}
 
 <div class="property-search">
+    <div class="grid-container">
   <div class="home-alert">
     {% include "../../partials/_alerts.html" %}
   </div>
   <h2>Find Your Dream Home</h2>
   <h4>Thousands of beautiful properties for you</h4>
-  <div class="grid-container">
     <form action="{% url 'search' %}">
       <div class="property-search-bar grid-x grid-padding-x">
         <div class="medium-2 cell">

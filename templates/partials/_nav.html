@@ -1,38 +1,51 @@
 {% load static %}
 <div class="nav-container">
   <div class="grid-container">
-  <a href="{% url 'index' %}"><img src="{% static 'img/logo.svg'%}" alt="" class="logo">
-  <ul class="navigation">
-  <li>
-  <a href="{% url 'index' %}"
-  {% if '/' == request.path %}
-  class = "active"
-  {% else %}
-  class= ""
-  {% endif %}
-  >Home
-  </a>
-  </li>
-  <li>
-  <a href="{% url 'about' %}"
-  {% if '/about' == request.path %}
-  class = "active"
-  {% else %}
-  class= ""
-  {% endif %}
-  >About Us
-  </a>
-  </li>
-  <li>
-  <a href="{% url 'listings' %}"
-  {% if '/listings/' == request.path %}
-  class = "active"
-  {% else %}
-  class= ""
-  {% endif %}
-  >Listings
-  </a>
-  </li>
-  </ul>
+    <ul class="navigation">
+      <li><a href="{% url 'index' %}"><img src="{% static 'img/logo.svg'%}" alt="" class="logo"></li>
+      <li>
+        <a href="{% url 'index' %}"
+          {% if '/' == request.path %}
+          class = "active"
+          {% else %}
+          class= ""
+          {% endif %}
+          >Home
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'about' %}"
+          {% if '/about' == request.path %}
+          class = "active"
+          {% else %}
+          class= ""
+          {% endif %}
+          >About Us
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'listings' %}"
+          {% if '/listings/' == request.path %}
+          class = "active"
+          {% else %}
+          class= ""
+          {% endif %}
+          >Listings
+        </a>
+      </li>
+    </ul>
+    <div class="login-container">
+      {% if user.is_authenticated %}
+        <a href="{% url 'dashboard' %}"><i class="fas fa-user-circle"></i></i>{{ user.first_name }}</a>
+        <a href="javascript:{document.getElementById('logout').submit()}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        <form id="logout" action="{% url 'logout' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden">
+        </form>
+      {% else %}
+        <a href="{% url 'login' %}"><i class="fas fa-user"></i></i>Login</a>
+        <a href="{% url 'register' %}"><i class="fas fa-sign-in-alt"></i>Register</a>
+      {% endif %}
+    </div>
   </div>
 </div>
