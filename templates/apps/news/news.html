@@ -1,10 +1,45 @@
 {% extends "base.html" %}
 
+{% load humanize %}
+
 {% block content %}
+
 <div class="page-header">
   <h2>News</h2>
 </div>
-{% for article in news %}
- {{ article.title}}
-{% endfor %}
+<div class="news-page">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="cell">
+        {% if news %}
+        <ul class="article-list">
+          {% for article in news %}
+          <li>
+            <div class="grid-x grid-padding-x">
+              <div class="cell small-3">
+                <img src="{{ article.image.url }}" alt="">
+              </div>
+              <div class="cell small-6">
+                <h3>{{ article.title }}</h3>
+                <h6>By {{ article.author }}</h6>
+                <p>{{ article.description }}</p>
+                <a class=button href="{% url 'article' article.id %}">View More</a>
+              </div>
+              <div class="cell small-3 text-right">
+                <span>{{ article.published_date | timesince }}</span>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <div class="cell">
+          <h2>No Articles Available</h2>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
