@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 
-{% load static %}
-
 {% load humanize %}
 
 {% block title %} | Home {% endblock %}
@@ -9,61 +7,66 @@
 {% block content %}
 
 <div class="property-search">
-    <div class="grid-container">
-  <div class="home-alert">
-    {% include "../../partials/_alerts.html" %}
-  </div>
-  <h2>Find Your Dream Home</h2>
-  <h4>Thousands of beautiful properties for you</h4>
-    <form action="{% url 'search' %}">
-      <div class="property-search-bar grid-x grid-padding-x">
-        <div class="medium-2 cell">
-          <input name="keywords" type="text" placeholder="Keywords">
-        </div>
-        <div class="medium-2 cell">
-          <input name="city" type="text" placeholder="City">
-        </div>
-        <div class="medium-2 cell">
-          <select name="county">
-            <option selected="true" disabled="disabled">County</option>
-            {% for key,value in county_choices.items %}
-            <option value="{{ key }}">{{ value }}</option>
-            {% endfor %}
-          </select>
-        </div>
-        <div class="medium-2 cell">
-          <select name="bedrooms">
-            <option selected="true" disabled="disabled">Bedrooms</option>
-            {% for key,value in bedroom_choices.items %}
-            <option value="{{ key }}">{{ value }}</option>
-            {% endfor %}
-          </select>
-        </div>
-        <div class="medium-2 cell">
-          <select name="price">
-            <option selected="true" disabled="disabled">Price</option>
-            {% for key,value in price_choices.items %}
-            <option value="{{ key }}">{{ value }}</option>
-            {% endfor %}
-          </select>
-        </div>
-        <div class="medium-2 cell">
-          <button type="submit" class="button">Search</button>
-        </div>
-      </form>
+  <div class="grid-container">
+    <div class=" grid-x">
+      <div class="cell">
+        <h2>Find Your Dream Home</h2>
+      </div>
+      <div class="cell">
+        <h4>Thousands of beautiful properties for you</h4>
+      </div>
+      <div class="cell">
+        <form action="{% url 'search' %}">
+          <div class=" grid-x grid-padding-x">
+            <div class="medium-2 cell">
+              <input name="keywords" type="text" placeholder="Keywords">
+            </div>
+            <div class="medium-2 cell">
+              <input name="city" type="text" placeholder="City">
+            </div>
+            <div class="medium-2 cell">
+              <select name="county">
+                <option selected="true" disabled="disabled">County</option>
+                {% for key,value in county_choices.items %}
+                <option value="{{ key }}">{{ value }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="medium-2 cell">
+              <select name="bedrooms">
+                <option selected="true" disabled="disabled">Bedrooms</option>
+                {% for key,value in bedroom_choices.items %}
+                <option value="{{ key }}">{{ value }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="medium-2 cell">
+              <select name="price">
+                <option selected="true" disabled="disabled">Price</option>
+                {% for key,value in price_choices.items %}
+                <option value="{{ key }}">{{ value }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="medium-2 cell">
+              <button type="submit" class="button">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-
 </div>
-<div class="recent-container">
+<div class="recent-listings">
   <div class="grid-container">
-    <div class="recent-listings">
-      <h2>Recent Listings</h2>
-      <div class="grid-x grid-margin-x" data-equalizer data-equalize-on="medium">
+    <div class="grid-x grid-margin-x" data-equalizer data-equalize-on="medium">
+        <div class="cell">
+          <h2>Recent Listings</h2>
+        </div>
         {% if listings %}
-            {% for listing in listings %}
+          {% for listing in listings %}
             <div class="cell small-4">
-              <div class="listing-card margin-bottom">
+              <div class="listing-card">
                 <div class="listing-card-head">
                   <div class="content-overlay"></div>
                   <img class="content-image" src="{{ listing.photo_main.url }}" alt="" data-equalizer-watch>
@@ -92,11 +95,10 @@
                 </div>
               </div>
             </div>
-            {% endfor %}
+          {% endfor %}
         {% else %}
           <h3>No Listings Available</h3>
         {% endif %}
-      </div>
     </div>
   </div>
 </div>

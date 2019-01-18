@@ -33,6 +33,16 @@
           >Listings
         </a>
       </li>
+      <li>
+        <a href="{% url 'search' %}"
+          {% if '/listings/search' == request.path %}
+          class = "active"
+          {% else %}
+          class= ""
+          {% endif %}
+          >Search
+        </a>
+      </li>
     </ul>
     <div class="login-container">
       {% if user.is_authenticated %}
