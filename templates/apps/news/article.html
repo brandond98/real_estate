@@ -17,7 +17,7 @@
     <div class="grid-x grid-padding-x grid-margin">
       <div class="cell small-8">
         <a href="{% url 'news' %}" class="back-button">Back To News</a>
-        <p>{{ article.content }}</p>
+        <p>{{ article.content|linebreaks }}</p>
       </div>
       <div class="cell small-4">
         <div class="seller-of-the-month">
