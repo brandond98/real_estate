@@ -43,6 +43,16 @@
           >Search
         </a>
       </li>
+      <li>
+        <a href="{% url 'news' %}"
+          {% if '/news/' == request.path %}
+          class = "active"
+          {% else %}
+          class= ""
+          {% endif %}
+          >News
+        </a>
+      </li>
     </ul>
     <div class="login-container">
       {% if user.is_authenticated %}

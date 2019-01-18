@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'accounts.apps.AccountsConfig',
     'contacts.apps.ContactsConfig',
+    'news.apps.NewsConfig',
 
 ]
 

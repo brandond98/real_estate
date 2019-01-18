@@ -68,10 +68,3 @@ def search(request):
 
     return render(request, 'apps/listings/search.html', context)
 
-
-realtors = Realtor.objects.all()
-mvp_realtors = Realtor.objects.all().filter(is_mvp=True)
-context = {
-
-
-}
