@@ -8,8 +8,9 @@
 
 {% block content %}
 
-<div class="page-header">
-  <h2>{{ listing.title }}</h2>
+<div style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url({{ listing.photo_main.url }}); background-position:center; background-size: cover;
+;" class="page-header">
+  <h2 >{{ listing.title }}</h2>
   <i class="fas fa-map-marker"></i>
   <h6>{{ listing.city }}, {{ listing.county }}, {{ listing.postcode }}</h6>
 </div>

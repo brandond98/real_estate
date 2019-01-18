@@ -1,46 +1,30 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{% static 'css/foundation.css' %}">
-  <link rel="stylesheet" href="{% static 'css/app.css' %}">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
-  <title>Real Estate Company | Login</title>
-</head>
-
-<body>
+{% block content %}
   <div class="login-page">
-    <div class="log-in-box">
-      <h3>Welcome!</h3>
-      {% include "../../partials/_alerts.html" %}
-      <form action="{% url 'login' %}" method="POST" data-abide novalidate>
-        {% csrf_token %}
-        <div data-abide-error class="alert callout" style="display: none;">
-          <p><i class="fi-alert"></i> There are some errors in your form.</p>
+    <div class="grid-container">
+      <div class="grid-x">
+        <div class="cell small-5 float-center">
+          <div class="log-in-box">
+            <h3>Welcome!</h3>
+            {% include "../../partials/_alerts.html" %}
+            <form action="{% url 'login' %}" method="POST" data-abide novalidate>
+              {% csrf_token %}
+              <div data-abide-error class="alert callout" style="display: none;">
+                <p><i class="fi-alert"></i> There are some errors in your form.</p>
+              </div>
+              <label>Username
+                  <input type="text" placeholder="Username" required name="username">
+              </label>
+              <label>Password
+                  <input type="password" placeholder="Password" required name="password">
+              </label>
+              <button type="submit" class="button submit">Log In</button>
+              <p><a href="{% url 'register' %}">Not a member? Register here!</a></p>
+            </form>
+          </div>
         </div>
-        <label>Username
-            <input type="text" placeholder="Username" required name="username">
-        </label>
-        <label>Password
-            <input type="password" placeholder="Password" required name="password">
-        </label>
-        <button type="submit" class="button submit">Log In</button>
-        <p><a href="{% url 'register' %}">Not a member? Register here!</a></p>
-      </form>
+      </div>
     </div>
-  </div>.
-
-  <script src="{% static 'js/vendor/jquery.js' %}"></script>
-  <script src="{% static 'js/vendor/what-input.js' %}"></script>
-  <script src="{% static 'js/vendor/foundation.js' %}"></script>
-  <script src="{% static 'js/app.js' %}"></script>
-
-</body>
-
-</html>
+  </div>
+{% endblock %}
