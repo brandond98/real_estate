@@ -539,3 +539,14 @@ height: 100%;
   background: #0098ef;
   border-radius: 5px;
 }
+
+.news-header {
+
+  padding: 200px 0 60px 0;
+  color: #fff;
+}
+
+.news {
+
+  font-size: 11pt;
+}

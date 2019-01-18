@@ -26,7 +26,7 @@
                 <a class=button href="{% url 'article' article.id %}">View More</a>
               </div>
               <div class="cell small-3 text-right">
-                <span>{{ article.published_date | timesince }}</span>
+                <span>{{ article.published_date | date:"d F Y" }}</span>
               </div>
             </div>
           </li>
