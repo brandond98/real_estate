@@ -201,6 +201,8 @@ footer {
   font-size: 14pt;
   font-weight: 600;
   margin-bottom: 15px;
+  text-align: center;
+  color:#0098ef;
 }
 
 .listing-card-bottom {
@@ -487,9 +489,17 @@ height: 100%;
   border-radius: 5px;
 }
 
-.recent-listings h2 {
+.recent-listings h1 {
   text-align: center;
   margin-bottom: 40px;
+  color: #0098ef;
+  font-size: 30pt;
+}
+
+.listing-card h4{
+
+  text-align: center;
+  margin-bottom: 20px;
   color: #0098ef;
 }
 
