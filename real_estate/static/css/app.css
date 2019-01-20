@@ -560,3 +560,39 @@ height: 100%;
 
   font-size: 11pt;
 }
+
+.meet-our-team {
+
+  padding: 100px 0;
+  text-align: center;
+  background: #edeff1;
+}
+
+.meet-our-team h2 {
+
+  margin-bottom: 40px;
+
+}
+
+.realtor-card {
+
+  border: 1px solid #ccc;
+}
+
+.realtor-card span{
+
+      font-size: 10pt;
+      font-style: italic;
+}
+
+
+.realtor-card-bottom {
+
+  background: #fff;
+  padding: 20px;
+}
+
+.realtor-card-bottom h5 {
+
+  font-weight: 400;
+}

@@ -54,6 +54,29 @@
   <p>Curabitur varius, libero id pulvinar egestas, quam turpis iaculis odio, eu blandit orci enim vel dui!</p>
 </div>
 
+<div class="meet-our-team">
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell">
+        <h2>Meet Our Awesome Team</h2>
+        <div class="grid-x grid-padding-x">
+          {% for realtor in realtors %}
+            <div class="cell small-3">
+              <div class="realtor-card">
+                <img src="{{ realtor.photo.url }}" alt="">
+                <div class="realtor-card-bottom">
+                  <h5>{{ realtor.name }}</h5>
+                  <span>{{ realtor.position }}</span>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 {% endblock %}
